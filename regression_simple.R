@@ -43,3 +43,6 @@ R_carre=sum((Y_i_chapeau-y_moy)^2)/sum((var_reponse-y_moy)^2)
 #avec X[,5], on a R² = 0.7534246
 #avec X[,3], on a R² = 0.1786671
 R_carre
+
+
+#A FAIRE : Prédiction (diapo 102), validité des hypothèses sur le bruit (diapo 108), Test de Kolmogorov (diapo 114)
