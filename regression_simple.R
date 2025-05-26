@@ -41,7 +41,7 @@ epsilon_i_chapeau=Y-Y_i_chapeau
 
 R_carre=sum((Y_i_chapeau-y_moy)^2)/sum((var_reponse-y_moy)^2)
 #avec X[,5], on a R² = 0.7534246
-#avec X[,3], on a R² = 0.1786671
+#avec X[,2], on a R² = 0.2301823 car cette variable doit être considérée comme une variable qualitative donc cela ne sert à rien de les afficher, il vaut mieux faire l'étude de la variance par exemple 
 R_carre
 
 
