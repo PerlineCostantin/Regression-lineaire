@@ -54,7 +54,7 @@ R_carre
 #Créer X
 u1=rep(c(1), n) #1 ère colonne avec que des 1
 u2=c(var_explicative) #2 ème colonne avec x1........xn
-  
+
 X=cbind(u1,u2) # concatener les 2 vect
 
 H= X %*% solve(t(X) %*% X) %*% t(X) # H =X(X'X)⁻1X'
@@ -129,7 +129,7 @@ borne_inf= an_chapeau*x_new + bn_chapeau-sqrt(sigma_n_carre*(1+(1/n)+(x_new-x_mo
 borne_sup= an_chapeau*x_new+ bn_chapeau+sqrt(sigma_n_carre*(1+(1/n)+(x_new-x_moy)^2/sum((var_explicative-x_moy)^2)))*quantile
 
 
-plot(var_explicative,var_reponse,col='blue')
+plot(var_explicative,var_reponse,col='blue',ylim=c(min(borne_inf),max(borne_sup)))
 lines(var_explicative,Y_i_chapeau,col='red', type='l')
 lines(x_new,borne_inf,col='green')
 lines(x_new,borne_sup,col='green')
