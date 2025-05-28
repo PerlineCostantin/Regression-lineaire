@@ -60,7 +60,7 @@ X=cbind(u1,u2) # concatener les 2 vect
 H= X %*% solve(t(X) %*% X) %*% t(X) # H =X(X'X)⁻1X'
 diagH=diag(H) 
 
-epsilon_i_sd_chapeau = Y-Y_i_chapeau/sqrt(sigma_n_carre*(1-diagH)) #résidus standardisés
+epsilon_i_sd_chapeau = (Y-Y_i_chapeau)/sqrt(sigma_n_carre*(1-diagH)) #résidus standardisés
 
 #vérif si les résidus standardisés suivent une loi normale standard
 qqnorm(epsilon_i_sd_chapeau , main = "Normal QQ", xlab="", ylab="Standardized residuals")
