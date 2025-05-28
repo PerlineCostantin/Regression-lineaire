@@ -14,7 +14,7 @@ X=B[,set2]
 
 var_reponse = Y
 var_explicative= X[,5]
-#remarque : avec X[,2], on trouve une mauvaise régression lin (R² sera proche de à) 
+#remarque : avec X[,2], on trouve une mauvaise régression lin (R² sera proche de 0) 
 #A FAIRE : Comparer les R²
 
 n=length(var_reponse )
