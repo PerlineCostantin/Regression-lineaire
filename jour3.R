@@ -1,41 +1,43 @@
 A=mtcars 
-F1=as.factor(A[,8])
+F1=as.factor(A[,8]) #convertir la colonne 8 (vs) en facteur = variable quantitative (binaire) convertie en variable qualitative
 A[,8]=F1
-set.seed(9)
+set.seed(9) #assurer la reproductibilité de l'échantillonage
 set.seed(9*floor(100*runif(1,0,3)))
-set1=sample(1:32,1)
-B=A[-set1,]
-Y=B[,1]
+set1=sample(1:32,1) #tire aléatoirement un entier entre 1 et 32
+B=A[-set1,] #crée un nouveau jeu de données en enlevant l'observation dans set1
+Y=B[,1] #Variable réponse = 1ère colonne de B (mpg)
 u=1:11
-v=u[-c(1,8,9)]
-set2=c(8,sample(v,6,replace=FALSE))
-X=B[,set2]
+v=u[-c(1,8,9)] #retire les colonnes 1 8 et 9 du vecteur u
+set2=c(8,sample(v,6,replace=FALSE)) #sélectionne la colonne 8 (vs) et 6 autres colonnes de v
+X=B[,set2] #matrice contenant toutes les variables explicatives
 
 
 var_reponse = Y
-var_explicative= X[,5]
+var_explicative= X[,5] #on choit la 5ème variable en tant que variable explicative
 #remarque : avec X[,2], on trouve une mauvaise régression lin (R² sera proche de 0) 
-#A FAIRE : Comparer les R²
+
 
 n=length(var_reponse )
 
-#moyennes : x barre et y barre 
+#calcul des moyennes : x barre et y barre 
 x_moy=mean(var_explicative)
 y_moy=mean(var_reponse)
 
+#estimation des coefficients 
 an_chapeau= sum((var_explicative-x_moy)*(var_reponse-y_moy))/sum((var_explicative-x_moy)^2)
 bn_chapeau= y_moy-an_chapeau*x_moy
-#pour vérif : on a an_chapeau = -5.355465 et bn_chapeau = 37.35029
-#si on fait lm(var_reponse~var_explicative) on a les memes val
+#pour vérifier les valeurs : on a an_chapeau = -5.355465 et bn_chapeau = 37.35029
+#si on fait lm(var_reponse~var_explicative) on a les mêmes val
 
 Y_i_chapeau=an_chapeau*var_explicative+bn_chapeau
 
+#Tracé de la droite de régression avec le nuage de points
 plot(var_explicative,var_reponse,col='blue')
 lines(var_explicative,Y_i_chapeau,col='red', type='l')
 
-#pour vérifier 
+#pour vérifier avec lm()
 LL=lm(var_reponse~var_explicative)
-abline(LL,col='green',lty=2)
+abline(LL,col='green',lty=2) #ajouter la droite de régression calculée par lm()
 
 #Evaluer la validité de la régression linéaire avec R²
 
