@@ -14,3 +14,17 @@ test = regsubsets(Y ~ ., data = donnees, nvmax = 4)
 
 resume = summary(test) #résumés pour tous les modèles testés
 
+#dans le tableau, on voit quelles variables retenir pour chauqe taille de modèle. Par exemple, pour un modèle à deux variables, les plus pertinentes seront X1 et X3
+
+#récuperer le R^2 et Ra^2
+names(resume) #pour savoir les éléments de resume
+
+Ra_2= resume$adjr2
+R_2= resume$sqr 
+
+#tracer l'évolution de R^2 et Ra^2 en fonction du nombre de variables explicatives
+plot(1:4, R_2, col = "blue",
+     xlab = "Nombre de variables", ylab = "R²", ylim = c(0, 1),
+     main = "Évolution de R² et R²a en fonction du nombre de variables")
+lines(1:4, Ra_2, col = "red")
+legend("bottomleft", legend = c("R²", "R² ajusté"), col = c("blue", "red"))
