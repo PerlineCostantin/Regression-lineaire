@@ -94,7 +94,8 @@ plot(x_vals,proba_cumulees,type="s",col="red")
 lines(x_vals,student,type="l", col="blue")
 
 #CONCLUSION : on a bien un résidu qui suit une loi de student donc le bruit vérifie l'hypothèse de la gaussienne
-#pour la présentation, on peut montrer que une loi uniforme ne suit pas une loi student avec la distance entre les courbes
+
+#pour faire un contre exemple, on peut montrer que une loi uniforme ne suit pas une loi student avec la distance entre les courbes
 U=runif(1000,min(val),max(val))
 sU=sort(U)
 Ye=(1:1000)/1000
