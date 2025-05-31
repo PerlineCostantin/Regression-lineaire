@@ -95,15 +95,23 @@ lines(x_vals,student,type="l", col="blue")
 
 #CONCLUSION : on a bien un résidu qui suit une loi de student donc le bruit vérifie l'hypothèse de la gaussienne
 
-#pour faire un contre exemple, on peut montrer que une loi uniforme ne suit pas une loi student avec la distance entre les courbes
-U=runif(1000,min(val),max(val))
-sU=sort(U)
-Ye=(1:1000)/1000
-plot(sU,Ye,type="s",col="red",xlim=c(min(x_vals,min(val)),max(x_vals,max(val))),ylim=c(0,1),  xlab = "Valeurs des données",
-     ylab = "Fonction de répartition")
+
+#pour faire un contre exemple, on peut montrer que une loi uniforme ne suit pas une loi student avec 
+la distance entre les courbes
+U=runif(1000,min(val),max(val)) #échantillon de 1000 observations suivant une loi uniforme entre le 
+min et le max des résdus studentisés
+sU=sort(U) #tri des données
+Ye=(1:1000)/1000 #proba cumulées
+
+#tracé de la fonction de répartition de la loi uniforme
+plot(sU,Ye,type="s",col="red",xlim=c(min(x_vals,min(val)),max(x_vals,max(val))),ylim=c(0,1),  
+xlab = "Valeurs des données",ylab = "Fonction de répartition")
+#Superposition de la fonction de répartition théorique de la loi de Student
 lines(x_vals,student,type="l", col="blue")
 
-#on peut donc tester le paramètre a (car bruit gaussien)
+
+
+#on peut donc tester le paramètre a (car le bruit est gaussien)
 #test du paramètre a : 
 sigma_n_carre=sum(((Y-Y_i_chapeau)^2)/(n-2))
 Ta=an_chapeau/sqrt(sigma_n_carre/sum((var_explicative-x_moy)^2))
