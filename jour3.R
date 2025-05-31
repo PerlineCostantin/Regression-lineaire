@@ -118,7 +118,7 @@ Ta=an_chapeau/sqrt(sigma_n_carre/sum((var_explicative-x_moy)^2))
 err_standard=sqrt(sigma_n_carre/sum((var_explicative-x_moy)^2))
 alpha=0.05
 #seuil=qt(1-(alpha/2), df=n-2)
-p_val= 1- pt(abs(Ta), df =n-2)
+p_val= 2*( 1- pt(abs(Ta), df =n-2))
 #on a p_val = 1.277153e-10< alpha donc on choisit H1
 
 #règle de décision
