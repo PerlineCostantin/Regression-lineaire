@@ -1,0 +1,4 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}Théorie}{2}{}%
+\contentsline {subsection}{\numberline {1.1}Cadre}{2}{}%
+\contentsline {subsection}{\numberline {1.2}Estimateurs paramétriques $\hat {a}_n$ et $\hat {b}_n$}{2}{}%
