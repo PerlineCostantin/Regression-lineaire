@@ -59,7 +59,7 @@ u2=c(var_explicative) #2 ème colonne avec x1........xn
 
 X=cbind(u1,u2) # concatener les 2 vect
 
-#matriec de projection 
+#matrice de projection 
 H= X %*% solve(t(X) %*% X) %*% t(X) # H =X(X'X)⁻1X'
 diagH=diag(H) 
 
