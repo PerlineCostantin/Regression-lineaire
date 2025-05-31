@@ -78,7 +78,7 @@ residus_studentises=rstudent(LL)
 ks.test(residus_studentises, "pt", df = n - 3)
 
 #comparaison des distances
-# Crée une fonction F pour la fonction de répartition
+#  Crée une fonction F pour la fonction de répartition empirique pour les résidus studentisés
 F = ecdf(residus_studentises) 
 
 # Points à tracer
