@@ -75,7 +75,7 @@ qqline(epsilon_i_sd_chapeau,xlab="", ylab="Standardized residuals")
 residus_studentises=rstudent(LL)
 
 #Test de Kolmogorov (diapo 114)
-ks.test(residus_studentises,"pnorm",mean=0, sd=1)
+ks.test(residus_studentises, "pt", df = n - 3)
 
 #comparaison des distances
 # Crée une fonction F pour la fonction de répartition
