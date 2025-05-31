@@ -59,15 +59,16 @@ u2=c(var_explicative) #2 ème colonne avec x1........xn
 
 X=cbind(u1,u2) # concatener les 2 vect
 
+#matriec de projection 
 H= X %*% solve(t(X) %*% X) %*% t(X) # H =X(X'X)⁻1X'
 diagH=diag(H) 
 
 epsilon_i_sd_chapeau = (Y-Y_i_chapeau)/sqrt(sigma_n_carre*(1-diagH)) #résidus standardisés
 
-#vérif si les résidus standardisés suivent une loi normale standard
+#Pour vérifier si les résidus standardisés suivent une loi normale standard 
 qqnorm(epsilon_i_sd_chapeau , main = "Normal QQ", xlab="", ylab="Standardized residuals")
 qqline(epsilon_i_sd_chapeau,xlab="", ylab="Standardized residuals")
-#on a les résidus standardisés qui suivent approximativement une loi normale standard : cela valide l'hypothèse de Gaussianité
+#on a les résidus standardisés qui suivent approximativement une loi normale standard (les points se trouvent sur la première bissectrice): cela valide l'hypothèse de Gaussianité
 
 
 #résidus studentisés : 
