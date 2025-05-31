@@ -99,9 +99,9 @@ lines(x_vals,student,type="l", col="blue")
 U=runif(1000,min(val),max(val))
 sU=sort(U)
 Ye=(1:1000)/1000
-plot(sU,Ye,type="s",col="red",xlim=c(min(x_vals,min(val)),max(x_vals,max(val))),ylim=c(0,1))
+plot(sU,Ye,type="s",col="red",xlim=c(min(x_vals,min(val)),max(x_vals,max(val))),ylim=c(0,1),  xlab = "Valeurs des données",
+     ylab = "Fonction de répartition")
 lines(x_vals,student,type="l", col="blue")
-
 
 #on peut donc tester le paramètre a (car bruit gaussien)
 #test du paramètre a : 
