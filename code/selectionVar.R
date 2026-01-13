@@ -3,7 +3,6 @@
 ### Méthode 1 : Avec R^2 et Ra^2 ###
 # on va utiliser leaps pour sélectionner les meilleurs sous-ensembles de variables explicatives pour prédire la variable réponse
 
-#package
 library(leaps)
 
 #mettre toutes les données dans un tableau 
